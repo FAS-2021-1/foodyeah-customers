@@ -18,10 +18,10 @@ public class Customer {
     private String customerName;
     private String customerAge;
 
-    public String dni;
+    private String dni;
     private CustomerStatus status;
 
-    private List<Role> customerRoles;
+    private String customerRoles;
     private String username;
     private String password;
 
@@ -36,6 +36,9 @@ public class Customer {
                         command.getId(),
                         command.getCustomerName(),
                         command.getCustomerAge(),
+                        command.getUsername(),
+                        command.getCustomerRoles(),
+                        command.getPassword(),
                         command.getDni(),
                         now
                 )
@@ -51,6 +54,9 @@ public class Customer {
                         command.getCustomerName(),
                         command.getCustomerAge(),
                         command.getDni(),
+                        command.getUsername(),
+                        command.getCustomerRoles(),
+                        command.getPassword(),
                         now
                 )
         );
@@ -63,6 +69,9 @@ public class Customer {
         customerAge = event.getCustomerAge();
         dni = event.getDni();
         status = CustomerStatus.ACTIVE;
+        username=event.getUsername();
+        password=event.getPassword();
+        customerRoles=event.getCustomerRoles();
     }
 
     @EventSourcingHandler
@@ -70,5 +79,8 @@ public class Customer {
         customerName = event.getCustomerName();
         customerAge = event.getCustomerAge();
         dni = event.getDni();
+        username=event.getUsername();
+        password=event.getPassword();
+        customerRoles=event.getCustomerRoles();
     }
 }

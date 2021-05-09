@@ -5,6 +5,7 @@ import javax.persistence.Id;
 @Entity
 public class CustomerDni {
     @Id
+    @Column
     public String dni;
     public String id;
     public CustomerDni(){

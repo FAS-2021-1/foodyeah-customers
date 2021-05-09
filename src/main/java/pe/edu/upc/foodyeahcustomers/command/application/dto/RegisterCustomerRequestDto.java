@@ -4,7 +4,11 @@ public class RegisterCustomerRequestDto {
     private String id;
     private String customerName;
     private String customerAge;
-    public String dni;
+    private String dni;
+    private String customerRoles;
+    private String username;
+    private String password;
+
     public String getId(){
         return id;
     }
@@ -17,4 +21,7 @@ public class RegisterCustomerRequestDto {
     public String getDni(){
         return dni;
     }
+    public String getCustomerRoles(){return customerRoles;}
+    public String getUsername(){return username;}
+    public String getPassword(){return password;}
 }
