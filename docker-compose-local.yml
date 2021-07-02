@@ -1,0 +1,13 @@
+services:
+  banking:
+    image: foodyeah-customers
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+    environment:
+      - ENVIRONMENT=local
+      - MYSQL_CUSTOMERS_JDBC_URL=jdbc:mysql://host.docker.internal:3306/customers?verifyServerCertificate=false&useSSL=false&useTimezone=true&serverTimezone=UTC
+      - MYSQL_CUSTOMERS_JDBC_USER=root
+      - MYSQL_CUSTOMERS_JDBC_PASSWORD=root
